@@ -116,7 +116,7 @@ static void mcast_fwd(void *p);
 struct multicast_on_behalf{   /*  ICMP message of multicast_on_behalf */
   uint16_t mcast_port;
   uip_ipaddr_t mcast_ip;
-  uint8_t mcast_payload[UIP_BUFSIZE - UIP_IPUDPH_LEN];
+  uint8_t mcast_payload[UIP_BUFSIZE - (UIP_IPH_LEN + UIP_ICMPH_LEN) - (sizeof(uint16_t) + sizeof(uip_ipaddr_t))];
 };
 #define UIP_ICMP_MOB 18 /* Size of multicast_on_behalf ICMP header */
 /*---------------------------------------------------------------------------*/
