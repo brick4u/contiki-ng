@@ -73,6 +73,11 @@ void rpl_timers_schedule_leaving(void);
 void rpl_timers_init(void);
 
 /**
+ * Stop all RPL timers
+*/
+void rpl_timers_deinit(void);
+
+/**
  * Stop all timers related to the DAG
 */
 void rpl_timers_stop_dag_timers(void);

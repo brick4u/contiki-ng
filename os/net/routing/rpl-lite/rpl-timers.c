@@ -508,6 +508,14 @@ rpl_timers_init(void)
   rpl_timers_schedule_periodic_dis();
 }
 /*---------------------------------------------------------------------------*/
+void
+rpl_timers_deinit(void)
+{
+  ctimer_stop(&periodic_timer);
+  ctimer_stop(&dis_timer);
+  rpl_timers_stop_dag_timers();
+}
+/*---------------------------------------------------------------------------*/
 static void
 handle_periodic_timer(void *ptr)
 {
