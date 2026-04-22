@@ -222,6 +222,13 @@
 #define ROLL_TM_SET_M_BIT 1
 #endif
 /*---------------------------------------------------------------------------*/
+/* Engine control */
+/*---------------------------------------------------------------------------*/
+/** \brief Suspend trickle timers without resetting engine state. */
+void roll_tm_suspend(void);
+/** \brief Resume trickle timers after roll_tm_suspend(). */
+void roll_tm_resume(void);
+/*---------------------------------------------------------------------------*/
 /* Stats datatype */
 /*---------------------------------------------------------------------------*/
 /**

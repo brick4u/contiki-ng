@@ -1429,6 +1429,22 @@ init()
   return;
 }
 /*---------------------------------------------------------------------------*/
+void
+roll_tm_suspend(void)
+{
+  ctimer_stop(&t[0].ct);
+  ctimer_stop(&t[1].ct);
+}
+/*---------------------------------------------------------------------------*/
+void
+roll_tm_resume(void)
+{
+  TIMER_CONFIGURE(0);
+  reset_trickle_timer(0);
+  TIMER_CONFIGURE(1);
+  reset_trickle_timer(1);
+}
+/*---------------------------------------------------------------------------*/
 /**
  * \brief The ROLL TM engine driver
  */
